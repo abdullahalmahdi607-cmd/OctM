@@ -1,0 +1,281 @@
+<!<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OctM — Innovating the OctaMeta Future</title>
+  <meta name="description" content="OctM — Modern, future-focused technology and services." />
+  <style>
+    /* ---------- Base ---------- */
+    :root{
+      --bg:#ffffff;
+      --text:#0b1220;
+      --muted:#6b7280;
+      --accent-silver: linear-gradient(90deg, #cfcfcf, #f3f4f6);
+      --silver-1: #c9c9c9;
+      --silver-2: #e9e9e9;
+      --glass: rgba(255,255,255,0.6);
+      --maxw:1200px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    /* ---------- Header / Nav ---------- */
+    header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(10,12,16,0.04)}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{display:inline-flex;align-items:center;gap:12px}
+    .logo svg{height:36px;width:auto}
+    nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a{font-weight:600;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:#f7f7f8}
+    .cta{padding:10px 14px;border-radius:10px;font-weight:700;background:linear-gradient(90deg,#e6e9ed,#ffffff);box-shadow:0 6px 18px rgba(15,20,30,0.06)}
+
+    /* ---------- Hero ---------- */
+    .hero{padding:120px 0 80px;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center}
+    .eyebrow{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+    h1{font-size:48px;margin:18px 0 10px;line-height:1.02}
+    p.lead{color:var(--muted);max-width:58ch;font-size:17px}
+
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,250,0.9));border-radius:16px;padding:22px;border:1px solid rgba(10,12,16,0.04);box-shadow:0 10px 30px rgba(9,12,20,0.04)}
+    .stats{display:flex;gap:18px;justify-content:space-between;margin-top:14px}
+    .stat{flex:1;text-align:center}
+    .stat strong{display:block;font-size:20px}
+    .hero-visual{height:360px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fbfbfd,#fff);border:1px solid var(--silver-2)}
+
+    /* ---------- Sections ---------- */
+    section{padding:72px 0;border-top:1px solid rgba(10,12,16,0.03)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:#fff;border-radius:12px;padding:20px;border:1px solid rgba(10,12,16,0.04);box-shadow:0 6px 18px rgba(10,12,20,0.03)}
+
+    /* ---------- Footer ---------- */
+    footer{padding:48px 0;color:var(--muted)}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;gap:24px;padding-top:110px}
+      .hero-visual{height:260px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+    }
+    @media (max-width:520px){
+      h1{font-size:34px}
+      .grid{grid-template-columns:1fr}
+      .hero-visual{height:200px}
+    }
+
+    /* ---------- Subtle interactions ---------- */
+    .fade-up{transform:translateY(12px);opacity:0;transition:all .7s cubic-bezier(.2,.9,.3,1)}
+    .reveal{transform:none;opacity:1}
+    .btn-outline{padding:10px 14px;border-radius:10px;border:1px solid rgba(10,12,16,0.06);font-weight:600}
+
+    /* ---------- Logo text rendering ---------- */
+    .logo-text{font-weight:800;letter-spacing:0.8px;font-size:20px}
+    .logo-sub{font-size:12px;color:var(--muted);margin-top:2px}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+
+  </style>
+</head>
+<body>
+  <!--
+    OctM — Single-file HTML prototype
+    - Theme: White & Modern
+    - Logo: Silver "OctM" (SVG + text)
+    - Designed to be SpaceX-inspired: big hero, minimal nav, clean cards
+
+    How to publish:
+    1. Save this file as index.html
+    2. Upload to your webhost or GitHub Pages and point octm.com to the hosting
+    3. If you need, I can provide step-by-step DNS/hosting instructions
+  -->
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <a class="logo" href="#">
+          <!-- SVG monogram + text -->
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#c9c9c9" />
+                <stop offset="1" stop-color="#f3f4f6" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="120" height="40" rx="6" fill="none" />
+            <!-- A minimalist octagon-ish mark -->
+            <g transform="translate(6,4)">
+              <path d="M6 0L18 0L24 6L24 18L18 24L6 24L0 18L0 6Z" fill="url(#g1)"></path>
+              <text x="36" y="17" font-family="Inter, Arial" font-weight="800" font-size="16" fill="url(#g1)">OctM</text>
+            </g>
+          </svg>
+        </a>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a class="cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">OctM</div>
+        <h1 class="fade-up">Building the next chapter of OctaMeta technologies.</h1>
+        <p class="lead fade-up">We design and deliver elegant, high-performance products and infrastructure for ambitious teams. OctM focuses on reliable engineering, crisp UX, and forward-looking platform design.</p>
+
+        <div style="margin-top:20px;display:flex;gap:12px;align-items:center">
+          <a class="btn-outline" href="#services">Our Services</a>
+          <a class="cta" href="#contact">Get in touch</a>
+        </div>
+
+        <div class="hero-card fade-up" style="margin-top:20px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="muted">Latest</div>
+              <strong>OctM Labs — Product Design Sprint</strong>
+              <div class="muted" style="font-size:13px;margin-top:6px">Research, prototyping, and initial architecture for Q4.</div>
+            </div>
+            <div style="text-align:right">
+              <div class="muted">Status</div>
+              <strong>Active</strong>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><strong>12</strong><span class="muted">Projects</span></div>
+            <div class="stat"><strong>4</strong><span class="muted">Team Members</span></div>
+            <div class="stat"><strong>99.9%</strong><span class="muted">Uptime</span></div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="hero-visual">
+          <!-- Decorative Silver logo block -->
+          <div style="text-align:center">
+            <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sg" x1="0" x2="1">
+                  <stop offset="0" stop-color="#d1d1d1" />
+                  <stop offset="1" stop-color="#f6f7f8" />
+                </linearGradient>
+                <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="18" flood-color="#000" flood-opacity="0.06" />
+                </filter>
+              </defs>
+              <g filter="url(#s)">
+                <circle cx="110" cy="110" r="86" fill="url(#sg)" stroke="#e6e6e6" stroke-width="1" />
+                <text x="110" y="122" font-family="Inter, Arial" font-size="54" font-weight="800" text-anchor="middle" fill="#a8a8a8">OctM</text>
+              </g>
+            </svg>
+            <div class="muted" style="margin-top:12px">A modern identity in silver — clean, bold, minimal.</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div style="display:flex;align-items:flex-start;gap:36px;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px">
+          <h2>About OctM</h2>
+          <p class="muted">OctM (OctaMeta) is a compact team of product designers, engineers and strategists working to ship reliable platforms and elegant frontends. We combine pragmatic engineering with decisive product thinking.</p>
+        </div>
+
+        <div style="flex:1;min-width:260px">
+          <h3>Our approach</h3>
+          <ul class="muted">
+            <li>Design-forward engineering</li>
+            <li>API-first architectures</li>
+            <li>Performance and simplicity</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <div class="grid" style="margin-top:16px">
+        <div class="card">
+          <h4>Product Design</h4>
+          <p class="muted">User research, prototyping, and UI strategy to validate ideas fast.</p>
+        </div>
+        <div class="card">
+          <h4>Platform Engineering</h4>
+          <p class="muted">Scalable APIs and infrastructure with maintainability in mind.</p>
+        </div>
+        <div class="card">
+          <h4>Consulting & Strategy</h4>
+          <p class="muted">Roadmaps, technical advisory, and go-to-market readiness.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>News & Updates</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:12px">
+        <article class="card">
+          <strong>OctM announces design sprint</strong>
+          <div class="muted" style="margin-top:6px">October 2025 — We launched a cross-functional sprint to explore product-market fit for a new platform feature.</div>
+        </article>
+        <article class="card">
+          <strong>Initial alpha released</strong>
+          <div class="muted" style="margin-top:6px">September 2025 — Alpha builds shared with early partners for feedback.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px">
+        <div style="flex:1;min-width:260px">
+          <p class="muted">For partnerships, press, or general inquiries — reach out and we’ll respond within 1-2 business days.</p>
+          <p><strong>Email:</strong> <a href="mailto:hello@octm.com">hello@octm.com</a></p>
+        </div>
+
+        <form style="flex:1;min-width:260px" onsubmit="event.preventDefault();alert('Thank you — this is a demo form. Replace with your backend or mailto link.');">
+          <label style="display:block;margin-bottom:8px">Name</label>
+          <input type="text" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(10,12,16,0.06);margin-bottom:10px" />
+          <label style="display:block;margin-bottom:8px">Email</label>
+          <input type="email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(10,12,16,0.06);margin-bottom:10px" />
+          <label style="display:block;margin-bottom:8px">Message</label>
+          <textarea required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(10,12,16,0.06);margin-bottom:10px" rows="4"></textarea>
+          <div style="display:flex;gap:8px">
+            <button type="submit" class="cta">Send</button>
+            <button type="button" class="btn-outline" onclick="location.href='mailto:hello@octm.com'">Email</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div class="muted">© OctM — All rights reserved.</div>
+        <div class="muted">Made with care • White & Silver theme</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Simple reveal on scroll
+    function reveal(){
+      document.querySelectorAll('.fade-up').forEach(el=>{
+        const r = el.getBoundingClientRect();
+        if(r.top < (window.innerHeight - 60)) el.classList.add('reveal');
+      });
+    }
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', ()=>{reveal();/* smooth scroll for hash links */document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t) t.scrollIntoView({behavior:'smooth',block:'start'});});});});
+  </script>
+</body>
+</html>
